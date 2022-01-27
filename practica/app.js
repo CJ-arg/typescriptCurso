@@ -8,11 +8,11 @@ var CLASES;
             this.alto = alto;
             this.color = color;
         }
-        Bloque.prototype.dibujarCubos = function () {
+        Bloque.prototype.dibujar = function () {
             ctx.fillStyle = 'red';
             ctx.fillRect(this.posX, this.posY, this.ancho, this.alto);
         };
-        Bloque.prototype.moverCubos = function () {
+        Bloque.prototype.mover = function () {
             this.posY += 1;
         };
         return Bloque;
@@ -29,16 +29,16 @@ var CLASES;
 })(CLASES || (CLASES = {}));
 ///<reference path="02clases.ts"/>
 var canvas = document.querySelector('canvas');
-var ctx = canvas === null || canvas === void 0 ? void 0 : canvas.getContext('2d');
+var ctx = canvas.getContext('2d');
 var cuerpo = document.querySelector('body');
-canvas.whidth = 800;
+canvas.width = 800;
 canvas.height = 608;
 canvas.style.border = "4px solid black";
 canvas.style.backgroundColor = "grey";
-cuerpo.style.backgroundColor = "black";
+cuerpo.style.backgroundColor = 'black';
 cuerpo.style.display = "flex";
 cuerpo.style.justifyContent = "center";
-function pintaFondo() {
+function pinta() {
     var escenario = [
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
         [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -74,19 +74,19 @@ function pintaFondo() {
     }
     CLASES.listaBloques.map(function (bloque) {
         var coorX = Math.round(bloque.posX / 32);
-        var coorY = Math.round(bloque.posY / 32);
-        bloque.dibujarCubos();
-        if (escenario[coorY][coorX] == 1)
-            bloque.moverCubos();
+        var coorY = Math.round(bloque.posY / 31);
+        bloque.dibujar();
+        if (escenario[coorY][coorX] == 0)
+            bloque.mover();
     });
 }
-function principalAnimar() {
-    requestAnimationFrame(principalAnimar);
-    canvas.whidth = 800;
+function principal() {
+    requestAnimationFrame(principal);
+    canvas.width = 800;
     canvas.height = 608;
-    pintaFondo();
+    pinta();
 }
-principalAnimar();
+principal();
 ///<reference path="02clases.ts"/>
 CLASES.listaBloques.map(function (bloques) {
     document.addEventListener('keydown', function (e) {

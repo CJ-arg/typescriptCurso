@@ -1,19 +1,20 @@
 ///<reference path="02clases.ts"/>
 
+
 const canvas:any=document.querySelector('canvas')
-const ctx=canvas?.getContext('2d')
+const ctx=canvas.getContext('2d')
 const cuerpo:any=document.querySelector('body')
 
-canvas.whidth=800
-canvas.height=608
+canvas.width =800
+canvas.height =608 
 canvas.style.border="4px solid black"
 canvas.style.backgroundColor="grey"
 
-cuerpo.style.backgroundColor="black"
+cuerpo.style.backgroundColor='black'
 cuerpo.style.display="flex"
 cuerpo.style.justifyContent="center"
 
-function pintaFondo(){
+function pinta(){
 
 let escenario:number[][]=[
     [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
@@ -36,6 +37,7 @@ let escenario:number[][]=[
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
     [1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1],
 ]
+
 for(let y=0;y<19;y++){
     for(let x=0;x<25;x++){
         if(escenario[y][x]==0){
@@ -49,23 +51,27 @@ for(let y=0;y<19;y++){
         }
     }
 }
+
+
+
 CLASES.listaBloques.map(bloque=>{
-let coorX=Math.round(bloque.posX/32)
-let coorY=Math.round(bloque.posY/32)
-bloque.dibujarCubos()
 
-if(escenario[coorY][coorX]==1)
-bloque.moverCubos()
-})
+    
+        
 
+    let coorX=Math.round(bloque.posX/32)
+    let coorY=Math.round(bloque.posY/31)
+      bloque.dibujar()
+      if(escenario[coorY][coorX]==0)
+     bloque.mover()
+           })
 }
 
-function principalAnimar(){
-requestAnimationFrame(principalAnimar)
-canvas.whidth=800
-canvas.height=608
-pintaFondo()
-}
-principalAnimar()
-
+function principal(){
+   requestAnimationFrame(principal)
+   canvas.width =800
+   canvas.height =608 
+   pinta()
+   }
+principal()
 
