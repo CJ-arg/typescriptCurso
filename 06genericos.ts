@@ -3,4 +3,4 @@
 function saludar<T>(){
 return "Hola"
 }
-console.log(saludar().floor());
+console.log(saludar().toUpperCase());
