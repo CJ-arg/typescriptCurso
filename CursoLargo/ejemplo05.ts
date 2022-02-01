@@ -2,12 +2,12 @@
 let numeros=[1,4,5,7];
 console.log(numeros);
 //Arrays strings
-let cadena5=['Hola','me','llama','Juan'];
-console.log(cadena);
+let cadena51=['Hola','me','llama','Juan'];
+console.log(cadena51);
 
 let cadena5:string[];
 cadena5=['Hola','me','llama','Pepe'];
-console.log(cadena5);
+console.log(cadena5, cadena51);
 
 let mezcla:any[];
 mezcla=['Hola','me','llama','Pepe',10,true];
@@ -42,12 +42,12 @@ let casa52=
     presentacion:["Hola","soy","el","padre"]
 }
 
-console.log(casa5;
+console.log(casa5);
 
-let mezcla3=['Hola','me','llama','Pepito',11,true,cassa5];
+let mezcla3=['Hola','me','llama','Pepito',11,true,casa5];
 console.log(mezcla3);
 
 let casas:any[];
-casas=[casa,casa52]
+casas=[casa5,casa52]
 
 console.log(casas);
