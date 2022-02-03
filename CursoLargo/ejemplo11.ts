@@ -15,6 +15,7 @@ for(let elemento of array){
 for(let indice in array) {
     console.log(indice);
     console.log(array[indice]);
+console.log(typeof indice);
 }
 
 
